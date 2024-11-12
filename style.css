@@ -1,0 +1,127 @@
+body {
+    display: flex;
+    /* Define o layout do corpo da página como flexível, permitindo a organização dos elementos filhos em uma linha ou coluna. */
+}
+
+.game-container {
+    width: 500px;
+    height: 730px;
+    position: absolute;
+    left: 80px;
+    /* Define a largura e altura do contêiner do jogo, posicionando-o de forma absoluta a 80 pixels da esquerda. */
+}
+
+.border-left {
+    width: 80px;
+    height: 790px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+    /* Define a largura, altura e posição absoluta da borda esquerda, com cor de fundo branca e um índice z para sobreposição. */
+}
+
+.border-right {
+    width: 80px;
+    height: 790px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+    left: 580px;
+    /* Define a largura, altura e posição absoluta da borda direita, com cor de fundo branca, um índice z para sobreposição e posicionamento a 580 pixels da esquerda. */
+}
+
+.border-top {
+    width: 660px;
+    height: 50px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+    top: -50px;
+    /* Define a largura, altura e posição absoluta da borda superior, com cor de fundo branca, um índice z para sobreposição e posicionamento a -50 pixels do topo. */
+}
+
+.sky {
+    background-image: url('img/fb-game-background.png');
+    width: 500px;
+    height: 580px;
+    position: absolute;
+    /* Define a imagem de fundo, largura, altura e posição absoluta do céu no jogo. */
+}
+
+.ground {
+    background-image: url('img/bottom-background.png');
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    top: 580px;
+    z-index: +1;
+    /* Define a imagem de fundo, largura, altura e posição absoluta do chão no jogo, com um índice z para sobreposição e posicionamento a 580 pixels do topo. */
+}
+
+.bird {
+    background-image: url('img/flappy-bird.png');
+    position: absolute;
+    width: 60px;
+    height: 45px;
+    left: 220px;
+    bottom: 100px;
+    /* Define a imagem de fundo, largura, altura e posição absoluta do pássaro no jogo, com posicionamento a 220 pixels da esquerda e 100 pixels do fundo. */
+}
+
+.obstacle {
+    background-image: url('img/flappybird-pipe.png');
+    width: 60px;
+    height: 300px;
+    position: absolute;
+    /* Define a imagem de fundo, largura, altura e posição absoluta dos obstáculos no jogo. */
+}
+
+.topObstacle {
+    background-image: url('img/flappybird-pipe.png');
+    transform: rotate(180deg);
+    width: 60px;
+    height: 300px;
+    position: absolute;
+    /* Define a imagem de fundo, largura, altura e posição absoluta dos obstáculos superiores no jogo, rotacionando-os em 180 graus. */
+}
+
+@keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+    /* Define uma animação chamada 'slideright' que move a posição de fundo de 10000% para 0%. */
+}
+
+@-webkit-keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+    /* Define a mesma animação 'slideright' para navegadores que usam prefixo '-webkit-'. */
+}
+
+.ground-container {
+    height: 150px;
+    width: 580px;
+    left: 80px;
+    position: absolute;
+    /* Define a altura, largura e posição absoluta do contêiner do chão, posicionando-o a 80 pixels da esquerda. */
+}
+
+.ground-moving {
+    position: absolute;
+    top: 580px;
+    height: 150px;
+    background-image: url('img/bottom-background.png');
+    background-repeat: repeat-x;
+    animation: slideright 100s infinite linear;
+    -webkit-animation: slideright 100s infinite linear;
+    width: 100%;
+    z-index: +1;
+    /* Define a posição absoluta, altura, imagem de fundo, repetição de fundo, animação e largura do chão em movimento, com um índice z para sobreposição e posicionamento a 580 pixels do topo. */
+}
